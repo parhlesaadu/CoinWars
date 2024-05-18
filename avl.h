@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AVL_H
+#define AVL_H
 #include <iostream>
 using namespace std;
 
@@ -118,3 +120,4 @@ public:
         root = insertNode(root, obj, num);
     }
 };
+#endif
