@@ -370,7 +370,8 @@ int main() {
     int p = playerinv.get("Coins"), e = enemyinv.get("Coins");
     cout << "Your coins: " << p << endl;
     cout << "Enemy coins: " << e << endl;
-    p > e ? cout << "You win!\n" : cout << "You lose!\n";
+    if (p == e) cout << "Issa draw!\n";
+    else p > e ? cout << "You win!\n" : cout << "You lose!\n";
 
-	return 0;
+    return 0;
 }
