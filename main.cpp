@@ -3,8 +3,6 @@
 using namespace sf;
 using namespace std;
 
-//  20i-0924 22i-1084 22i-1714
-
 int main() {
     srand(sin(time(0)) * 1000); 
     int frameCount = 0, moveTimer = 1000;
