@@ -2,8 +2,6 @@
 #include <iostream>
 using namespace std;
 
-//  20i-0924 22i-1084 22i-1714
-
 struct Node {
     string object; int quantity;
     Node* llink = nullptr, * rlink = nullptr;
