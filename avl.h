@@ -63,16 +63,6 @@ Node* leftRotate(Node* node) {
     return temp1;
 }
 
-Node* minValueNode(Node* node) {
-    Node* current = node;
-
-    // Loop down to find the leftmost leaf
-    while (current->llink)
-        current = current->llink;
-
-    return current;
-}
-
 Node* insertNode(Node* n, string obj, int num) {
     if (!n) return new Node{ obj, num };
     else if (n->quantity > num) n->llink = insertNode(n->llink, obj, num);
