@@ -6,15 +6,15 @@ using namespace std;
 
 struct Node {
     string object; int quantity;
-    Node* llink = nullptr, * rlink = nullptr;
+    Node* left = nullptr, * right = nullptr;
 };
 
 string displayInOrder(Node* ptr) {
     string str = "";
     if (ptr) {
-        str += displayInOrder(ptr->llink);
+        str += displayInOrder(ptr->left);
         str += ptr->object + ": " + to_string(ptr->quantity) + "  ";
-        str += displayInOrder(ptr->rlink);
+        str += displayInOrder(ptr->right);
     }
     return str;
 }
@@ -23,8 +23,8 @@ int find(Node* ptr, string str) {
     if (ptr) {
         if (ptr->object == str) return ptr->quantity;
         else {
-            int l = find(ptr->llink, str);
-            int r = find(ptr->rlink, str);
+            int l = find(ptr->left, str);
+            int r = find(ptr->right, str);
             return l ? l : r;
         }
     }
@@ -33,53 +33,53 @@ int find(Node* ptr, string str) {
 
 int height(Node* n) {
     if (!n) return -1;
-    return max(height(n->llink), height(n->rlink)) + 1;
+    return max(height(n->left), height(n->right)) + 1;
 }
 
 int getbalance(Node* n) {
     if (!n) return -1;
-    return (height(n->llink) - height(n->rlink));
+    return (height(n->left) - height(n->right));
 }
 
 Node* rightRotate(Node* node) {
-    Node* temp1 = node->llink;
-    Node* temp2 = temp1->rlink;
+    Node* temp1 = node->left;
+    Node* temp2 = temp1->right;
 
     // Perform rotation
-    temp1->rlink = node;
-    node->llink = temp2;
+    temp1->right = node;
+    node->left = temp2;
 
     return temp1;
 }
 
 Node* leftRotate(Node* node) {
-    Node* temp1 = node->rlink;
-    Node* temp2 = temp1->llink;
+    Node* temp1 = node->right;
+    Node* temp2 = temp1->left;
 
     // Perform rotation
-    temp1->llink = node;
-    node->rlink = temp2;
+    temp1->left = node;
+    node->right = temp2;
 
     return temp1;
 }
 
 Node* insertNode(Node* n, string obj, int num) {
     if (!n) return new Node{ obj, num };
-    else if (n->quantity > num) n->llink = insertNode(n->llink, obj, num);
-    else if (n->quantity < num) n->rlink = insertNode(n->rlink, obj, num);
+    else if (n->quantity > num) n->left = insertNode(n->left, obj, num);
+    else if (n->quantity < num) n->right = insertNode(n->right, obj, num);
     else return n;
 
     int balance = getbalance(n);
-    if (balance > 1 && num < n->llink->quantity) return rightRotate(n);
-    if (balance < -1 && num > n->rlink->quantity) return leftRotate(n);
+    if (balance > 1 && num < n->left->quantity) return rightRotate(n);
+    if (balance < -1 && num > n->right->quantity) return leftRotate(n);
 
-    if (balance > 1 && num > n->llink->quantity) {
-        n->llink = leftRotate(n->llink);
+    if (balance > 1 && num > n->left->quantity) {
+        n->left = leftRotate(n->left);
         return rightRotate(n);
     }
 
-    if (balance < -1 && num < n->rlink->quantity) {
-        n->rlink = rightRotate(n->rlink);
+    if (balance < -1 && num < n->right->quantity) {
+        n->right = rightRotate(n->right);
         return leftRotate(n);
     }
     return n;
@@ -87,9 +87,9 @@ Node* insertNode(Node* n, string obj, int num) {
 
 void change(Node* ptr, string s, int i) {
     if (ptr) {
-        change(ptr->llink, s, i);
+        change(ptr->left, s, i);
         if (ptr->object == s) ptr->quantity = i;
-        change(ptr->rlink, s, i);
+        change(ptr->right, s, i);
     }
 }
 
@@ -110,4 +110,3 @@ public:
         root = insertNode(root, obj, num);
     }
 };
-#endif
