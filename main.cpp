@@ -19,7 +19,7 @@ int main() {
     int pathSize = 0, pathPos = 0;
 
     Font f1;
-    f1.loadFromFile("GroveyDemo.ttf");
+    f1.loadFromFile("arial.ttf");
 
     Text score, enemyscore;
     score.setCharacterSize(20); score.setFont(f1);
