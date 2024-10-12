@@ -6,8 +6,9 @@ The original creator has implemented a shortest path algorithm, using which the 
 \
 **How to run the game:**\
 This game's operation requires SFML and an integrated development environment (IDE). Kindly watch video #46 of the following Udemy course to install and configure the required apparatus on Windows: https://www.udemy.com/course/learn-c-game-development/. Copy and paste the contents of main.cpp, and don't forget to move the rest of the files in the project directory.\
+\
 P.S. You can customise the game's look by replacing the font file (arial.ttf) - make sure to update the font name in main.cpp! You can also replace the .png files with other images of the same name and resolution.\
 \
-**Credits:**
+**Credits:**\
 https://github.com/cowster36 (Open-source) : SFML implementation, random maze generation, shortest path algorithm, single-round gameplay\
-https://github.com/parhlesaadu : multi-round combat system involving swords and health points, scoreboard, AVL tree for storing player statistics\
+https://github.com/parhlesaadu : multi-round combat system involving swords and health points, scoreboard, AVL tree for storing player statistics
