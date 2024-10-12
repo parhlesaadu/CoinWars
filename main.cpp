@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <cmath>
 #include "avl.h"
 using namespace sf;
 using namespace std;
