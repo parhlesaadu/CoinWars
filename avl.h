@@ -110,3 +110,4 @@ public:
         root = insertNode(root, obj, num);
     }
 };
+#endif
