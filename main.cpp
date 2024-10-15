@@ -41,19 +41,19 @@ int main() {
     villainSp.setOutlineColor(Color(0, 0, 0));
 
     Texture coinTex;
-    coinTex.loadFromFile("coin.png");
+    coinTex.loadFromFile("images/coin.png");
     Sprite coins[5];
     for (int i = 0; i < 5; i++) coins[i].setTexture(coinTex);
     int numCoins = 0, collectedCoins = 0;
 
     Texture swordTex;
-    swordTex.loadFromFile("weapon.png");
+    swordTex.loadFromFile("images/weapon.png");
     Sprite swords[5];
     for (int i = 0; i < 5; i++) swords[i].setTexture(swordTex);
     int numSwords = 0, collectedSwords = 5, enemySwords = 5;
 
     Texture healthTex;
-    healthTex.loadFromFile("health.png");
+    healthTex.loadFromFile("images/health.png");
     Sprite healthPoints[5];
     for (int i = 0; i < 5; i++) healthPoints[i].setTexture(healthTex);
     int numHealth = 0, health = 100, enemyHealth = 100;
