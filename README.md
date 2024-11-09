@@ -10,5 +10,5 @@ This game's operation requires SFML and an integrated development environment (I
 P.S. You can customise the game's look by replacing the font file (arial.ttf) - make sure to update the font name in main.cpp! You can also replace the .png files with other images of the same name and resolution.\
 \
 **Credits:**\
-cowster36: SFML implementation, random maze generation, shortest path algorithm, single-round gameplay\
-parhlesaadu: multi-round combat system involving swords and health points, scoreboard, AVL tree for storing player statistics
+cowster36 - SFML implementation, random maze generation, shortest path algorithm, single-round gameplay\
+parhlesaadu - multi-round combat system involving swords and health points, scoreboard, AVL tree for storing player statistics
