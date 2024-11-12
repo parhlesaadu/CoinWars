@@ -11,4 +11,4 @@ P.S. You can customise the game's look by replacing the font file (arial.ttf) - 
 \
 **Credits:**\
 cowster36 - SFML implementation, random maze generation, shortest path algorithm, single-round gameplay\
-parhlesaadu - multi-round combat system involving swords and health points, scoreboard, AVL tree for storing player statistics
+parhlesaadu - multi-round combat system involving swords and health points, AVL-tree based scoreboard
